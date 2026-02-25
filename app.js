@@ -1,4 +1,4 @@
-// ===== CONFIGURACIÓN (editá estos valores) =====
+
 const whatsappNumber = "+595971636747"; // ← Cambiá por tu número real
 
 // ===== WHATSAPP BUTTONS =====
@@ -60,4 +60,33 @@ document.querySelectorAll('.accordion h3').forEach(item => {
             item.setAttribute('aria-expanded', 'true');
         }
     });
+
+});
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+
+hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileNav.setAttribute('aria-hidden', !isOpen);
+});
+
+// Cerrar al hacer click en un link del menú
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+        mobileNav.setAttribute('aria-hidden', true);
+    });
+});
+
+// Cerrar al hacer click afuera
+document.addEventListener('click', (e) => {
+    if (!header.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+    }
 });
