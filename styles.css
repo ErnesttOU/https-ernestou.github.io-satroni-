@@ -16,8 +16,6 @@
 --border: #E5E7EB;
 --shadow: 0 4px 24px rgba(0,0,0,0.08);
 --shadow-lg: 0 8px 40px rgba(0,0,0,0.13);
-
-  /* Dark mode vars (overridden in .dark) */
 --bg: var(--white);
 --bg-card: var(--white);
 --bg-light: var(--light);
@@ -28,77 +26,6 @@
 --footer-bg: var(--dark);
 }
 
-/* ── DARK MODE ── */
-body.dark {
---bg: #0f0f1a;
---bg-card: #1a1a2e;
---bg-light: #1e1e30;
---text: #eef0f6;
---text-muted: #9ca3af;
---border-color: #2e2e45;
---nav-bg: #13131f;
---footer-bg: #0a0a14;
---white: #1a1a2e;
---light: #1e1e30;
---dark: #eef0f6;
---gray: #9ca3af;
---border: #2e2e45;
---shadow: 0 4px 24px rgba(0,0,0,0.35);
---shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
-}
-
-body.dark body { background: var(--bg); color: var(--text); }
-body.dark nav { background: var(--nav-bg); border-color: var(--border-color); }
-body.dark .side-menu { background: var(--bg-card); }
-body.dark .side-menu ul li { border-color: var(--border-color); }
-body.dark .side-menu ul li a { color: var(--text); }
-body.dark .category-card,
-body.dark .product-card,
-body.dark .testimonial-card { background: var(--bg-card); border-color: var(--border-color); }
-body.dark .product-img,
-body.dark .category-card-img { background: var(--bg-light); }
-body.dark .modal,
-body.dark .detail-modal-inner { background: var(--bg-card); }
-body.dark .modal-header,
-body.dark .cart-panel-header { border-color: var(--border-color); background: var(--bg-card); }
-body.dark .cart-panel { background: var(--bg-card); }
-body.dark #cart-items { background: var(--bg-card); }
-body.dark .features { background: var(--bg-card); border-color: var(--border-color); }
-body.dark .admin-panel { background: var(--bg-card); }
-body.dark .admin-input { background: var(--bg-light); color: var(--text); border-color: var(--border-color); }
-body.dark .footer { background: var(--footer-bg); }
-body.dark .dark-toggle { background: #2e2e45; border-color: #3a3a55; }
-body.dark .hamburger span { background: var(--text); }
-body.dark .product-name,
-body.dark .category-card-info h3 { color: var(--text); }
-body.dark .product-desc,
-body.dark .category-card-info p { color: var(--text-muted); }
-body.dark .section-title { color: var(--text); }
-body.dark .detail-name { color: var(--text); }
-body.dark .detail-features li { color: var(--text); }
-body.dark .detail-divider { background: var(--border-color); }
-body.dark .detail-box-label { color: var(--text-muted); }
-body.dark .detail-back { border-color: var(--border-color); color: var(--text-muted); }
-body.dark .detail-back:hover { border-color: var(--purple); color: var(--purple); background: rgba(123,63,160,0.1); }
-body.dark .cart-total-inner { border-color: var(--border-color); }
-body.dark .product-card-rosa { background: #2a1a2a !important; border-color: #6e2660 !important; }
-body.dark .product-card-rosa .product-img { background: #2a1a2a; }
-body.dark .admin-panel-body { background: var(--bg-card); }
-body.dark .hero-content {
-background: linear-gradient(to right, rgba(15,15,26,0.97) 45%, rgba(15,15,26,0) 100%);
-}
-body.dark .hero-content h1 { color: var(--text); }
-body.dark .hero-content p { color: var(--text-muted); }
-body.dark .btn-whatsapp { background: rgba(30,30,48,0.85); border-color: var(--border-color); color: var(--text); }
-body.dark .students-post { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
-body.dark .sp-text { color: rgba(255,255,255,0.85); }
-body.dark .sp-meta strong { color: #fff; }
-body.dark .sp-meta span { color: rgba(255,255,255,0.6); }
-body.dark .entrega-card { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
-body.dark .entrega-card .sp-text { color: rgba(255,255,255,0.85); }
-body.dark .entrega-card .sp-meta strong { color: #fff; }
-body.dark .entrega-card .sp-meta span { color: rgba(255,255,255,0.6); }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -106,18 +33,7 @@ font-family: 'Poppins', sans-serif;
 color: var(--dark);
 background: var(--white);
 overflow-x: hidden;
-transition: background .3s, color .3s;
 }
-
-/* ── DARK TOGGLE BUTTON ── */
-.dark-toggle {
-display: flex; align-items: center; justify-content: center;
-width: 40px; height: 40px; border-radius: 10px;
-background: var(--light); border: 1.5px solid var(--border);
-cursor: pointer; font-size: 18px;
-transition: background .2s, border-color .2s, transform .15s;
-}
-.dark-toggle:hover { background: #e8e8f8; border-color: var(--purple); transform: translateY(-2px); }
 
 /* ── NAVBAR ── */
 nav {
@@ -126,7 +42,6 @@ background: var(--white); border-bottom: 1px solid var(--border);
 padding: 0 5%; display: flex; align-items: center;
 justify-content: space-between; height: 72px;
 box-shadow: 0 2px 12px rgba(0,0,0,0.06); gap: 16px;
-transition: background .3s, border-color .3s;
 }
 .nav-left { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
@@ -567,8 +482,7 @@ white-space: nowrap; padding: 0 8px;
 }
 
 /* ══════════════════════════════════════════
-   STUDENTS POST  — base card (usada para
-   los posts hardcoded Y las entregas)
+   STUDENTS POST
    ══════════════════════════════════════════ */
 .students-post {
 background: rgba(255,255,255,0.13);
@@ -603,9 +517,8 @@ font-size: 0.85rem; color: rgba(255,255,255,0.9); line-height: 1.55; font-style:
 .sp-tag { font-size: 0.72rem; color: rgba(255,255,255,0.7); font-weight: 600; }
 .sp-verified { color: #86efac; }
 
-/* ── ENTREGA CARD (hereda de students-post + agrega foto arriba) ── */
+/* ── ENTREGA CARD ── */
 .entrega-card {
-/* sobreescribe el padding del students-post para que la foto llegue al borde */
 padding: 0;
 overflow: hidden;
 }
@@ -618,7 +531,6 @@ overflow: hidden;
 .entrega-card .sp-header { padding-top: 18px; }
 .entrega-card .sp-tag { padding-bottom: 18px; }
 
-/* Foto de entrega (arriba de la card) */
 .entrega-foto-wrap {
   width: 100%;
   overflow: hidden;
@@ -635,7 +547,7 @@ overflow: hidden;
   font-size: 2.5rem; color: rgba(255,255,255,0.4);
 }
 
-/* Grid de entregas (mismo que comunidad-posts-grid) */
+/* Grid de entregas */
 .entregas-grid {
 display: grid;
 grid-template-columns: repeat(4, 1fr);
@@ -858,9 +770,60 @@ section { padding: 48px 4%; }
 .products-grid { grid-template-columns: 1fr; }
 .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 .features { flex-direction: column; align-items: flex-start; gap: 20px; padding: 32px 4%; }
-.modal { width: 96%; max-height: 90vh; }
-.modal-products { grid-template-columns: 1fr; padding: 16px; }
-.modal-header { padding: 18px 20px; }
+
+/* ── MODAL EN MÓVIL: 2 columnas compactas ── */
+.modal { width: 96%; max-height: 92vh; }
+.modal-header { padding: 14px 16px; }
+.modal-header h3 { font-size: 1rem; }
+.modal-products {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+    padding: 12px;
+}
+/* Cards del modal en móvil: más compactas */
+.modal-products .product-card {
+    border-radius: 12px;
+}
+.modal-products .product-img {
+    height: 110px;
+}
+.modal-products .product-img img {
+    max-height: 90px;
+}
+.modal-products .product-info {
+    padding: 10px 10px 12px;
+}
+.modal-products .product-name {
+    font-size: 0.78rem;
+    margin-bottom: 3px;
+}
+.modal-products .product-desc {
+    font-size: 0.7rem;
+    margin-bottom: 6px;
+    /* Limitar a 2 líneas para no ocupar tanto espacio */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.modal-products .product-badges {
+    gap: 3px;
+    margin-bottom: 6px;
+}
+.modal-products .mini-badge {
+    font-size: 0.62rem;
+    padding: 2px 6px;
+}
+.modal-products .product-price {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+.modal-products .btn {
+    padding: 7px 10px;
+    font-size: 0.72rem;
+    gap: 4px;
+}
+
 .cart-panel { width: 100%; }
 .comunidad-posts-grid,
 .entregas-grid { grid-template-columns: 1fr; }
@@ -875,7 +838,7 @@ section { padding: 48px 4%; }
 
 @media (max-width: 480px) {
 .products-grid { grid-template-columns: 1fr; }
-.modal-products { grid-template-columns: 1fr; }
+.modal-products { grid-template-columns: repeat(2, 1fr) !important; }
 .product-badges { flex-direction: column; gap: 4px; }
 }
 
