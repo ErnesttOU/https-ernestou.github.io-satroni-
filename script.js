@@ -1,19 +1,3 @@
-// ── DARK MODE ──
-function toggleDark() {
-const isDark = document.body.classList.toggle('dark');
-localStorage.setItem('satroni_dark', isDark ? '1' : '0');
-document.getElementById('dark-toggle').querySelector('.dark-toggle-icon').textContent = isDark ? '☀️' : '🌙';
-}
-(function() {
-if (localStorage.getItem('satroni_dark') === '1') {
-    document.body.classList.add('dark');
-    document.addEventListener('DOMContentLoaded', () => {
-    const icon = document.querySelector('.dark-toggle-icon');
-    if (icon) icon.textContent = '☀️';
-    });
-}
-})();
-
 // ── SCROLL ANIMATIONS ──
 const animObserver = new IntersectionObserver(entries => {
 entries.forEach(e => {
@@ -85,7 +69,7 @@ ingenieria: {
     tag: '🎓 Ingeniería',
     products: [
     {
-        name: 'Osalo 991EX CW',
+        name: 'OSALO OS-991EX CW',
         img: 'assets/OSALO991EX-CW.webp',
         boxImg: 'assets/Fx-991CWBOX.webp',
         price: 270000,
@@ -105,11 +89,12 @@ ingenieria: {
         'Números complejos, vectores y geometría',
         'Algoritmo de cálculo numérico (integración y diferenciación)',
         '✅ Incluye Factura Legal',
+        '📃 Garantía de 3 meses',
         '🚚 Envíos a todo el país',
         ]
     },
     {
-        name: 'Casio fx-991 CW',
+        name: 'Casio fx-991CW',
         img: 'assets/Casio fx991CW.webp',
         boxImg: 'assets/Fx-991CWBOX.webp',
         price: 310000,
@@ -126,6 +111,7 @@ ingenieria: {
         'Integración y diferenciación numérica',
         'Aprobada para exámenes internacionales',
         '✅ Incluye Factura Legal',
+        '📃 Garantía de 3 meses',
         '🚚 Envíos a todo el país',
         ]
     },
@@ -136,7 +122,7 @@ universidad: {
     tag: '📊 Universidad',
     products: [
     {
-        name: 'Casio fx-991ES Plus',
+        name: 'Casio fx-991ES PLUS',
         img: 'assets/991ESPLUS.webp',
         boxImg: '',
         price: 195000,
@@ -154,16 +140,17 @@ universidad: {
         'Constantes físicas y conversión de unidades incorporadas',
         'Solar + batería: nunca se queda sin energía',
         '✅ Incluye Factura Legal',
+        '📃 Garantía de 3 meses',
         '🚚 Envíos a todo el país',
         ]
     },
     {
-        name: 'Casio fx-991ES Plus – Edición Rosa',
+        name: 'Casio fx-991ES PLUS – Edición Rosa',
         img: 'assets/FX-991ESPLUSROSA.webp',
         boxImg: 'assets/Fx-991ESPLUSROSA-BOX.webp',
         price: 205000,
         rosa: true,
-        desc: 'Las mismas 417 funciones de la fx-991ES Plus en una edición especial color rosa.',
+        desc: 'Las mismas 417 funciones de la fx-991ES PLUS en una edición especial color rosa.',
         features: [
         '417 funciones científicas',
         'Natural Textbook Display',
@@ -175,6 +162,7 @@ universidad: {
         'Solar + batería',
         '🌸 Edición especial color rosa',
         '✅ Incluye Factura Legal',
+        '📃 Garantía de 3 meses',
         '🚚 Envíos a todo el país',
         ]
     },
@@ -185,7 +173,7 @@ colegio: {
     tag: '🏫 Colegio e Ingreso',
     products: [
     {
-        name: 'Casio fx-82ES Plus',
+        name: 'Casio fx-82ES PLUS',
         img: 'assets/FX-82ESPLUS.webp',
         boxImg: '',
         price: 177000,
@@ -202,16 +190,17 @@ colegio: {
         'Constantes físicas y conversión de unidades',
         'Aprobada para exámenes de ingreso en Paraguay',
         '✅ Incluye Factura Legal',
+        '📃 Garantía de 3 meses',
         '🚚 Envíos a todo el país',
         ]
     },
     {
-        name: 'Casio fx-82ES Plus – Edición Rosa',
+        name: 'Casio fx-82ES PLUS – Edición Rosa',
         img: 'assets/FX-82ESPLUSROSA.webp',
         boxImg: 'assets/FX-82ESPLUSROSABOX.webp',
         price: 187000,
         rosa: true,
-        desc: 'Las mismas 252 funciones de la fx-82ES Plus en una edición especial color rosa.',
+        desc: 'Las mismas 252 funciones de la fx-82ES PLUS en una edición especial color rosa.',
         features: [
         '252 funciones científicas',
         'Natural Textbook Display',
@@ -220,6 +209,7 @@ colegio: {
         'Aprobada para exámenes de ingreso en Paraguay',
         '🌸 Edición especial color rosa',
         '✅ Incluye Factura Legal',
+        '📃 Garantía de 3 meses',
         '🚚 Envíos a todo el país',
         ]
     },
@@ -248,6 +238,7 @@ document.getElementById('modal-products').innerHTML = data.products.map((p, idx)
         <p class="product-desc">${p.desc}</p>
         <div class="product-badges">
         <span class="mini-badge">✅ Factura legal</span>
+        <span class="mini-badge">📃 Garantía de 3 meses</span>
         <span class="mini-badge">🚚 Envío a todo el país</span>
         </div>
         <p class="product-price">Gs. ${p.price.toLocaleString()}</p>
@@ -345,7 +336,7 @@ cartBtn.onclick = () => {
 };
 
 const waMsg = encodeURIComponent(`Hola! Me interesa la ${p.name} a Gs. ${p.price.toLocaleString()}. ¿Está disponible?`);
-document.getElementById('detail-wa-btn').href = `https://wa.me/595971636747?text=${waMsg}`;
+document.getElementById('detail-wa-btn').href = `https://wa.me/5950974687312?text=${waMsg}`;
 
 closeModal();
 setTimeout(() => {
@@ -442,12 +433,10 @@ document.body.style.overflow = panel.classList.contains('open') ? 'hidden' : '';
 }
 
 // ── ENTREGAS REALES ──
-// Genera las iniciales a partir del nombre (ej: "Carlos M." → "CM")
 function getInitials(nombre) {
 return nombre.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
 }
 
-// Paleta de colores para los avatares dinámicos
 const avatarColors = ['#7B3FA0', '#e91e8c', '#2563EB', '#F26B1D', '#059669', '#DC2626', '#7C3AED', '#0891B2'];
 function getAvatarColor(nombre) {
 let hash = 0;
@@ -463,12 +452,10 @@ function saveEntregas() {
 localStorage.setItem('satroni_entregas', JSON.stringify(entregas));
 }
 
-// ── RENDER ENTREGAS: formato igual que los posts de comunidad ──
 function renderEntregas() {
 const grid = document.getElementById('entregas-grid');
 const empty = document.getElementById('entregas-empty');
 
-// Limpiar cards previas
 grid.querySelectorAll('.entrega-card').forEach(c => c.remove());
 
 if (!entregas.length) {
@@ -486,7 +473,6 @@ entregas.forEach((e) => {
     const avatarColor = getAvatarColor(e.nombre);
     const carrera = e.carrera || '';
 
-    // Foto (si tiene imagen, se muestra arriba de la card)
     const fotoHtml = e.img
     ? `<div class="entrega-foto-wrap"><img class="entrega-foto" src="${e.img}" alt="Entrega de ${e.nombre}" onerror="this.parentElement.innerHTML='<div class=\\'entrega-foto-placeholder\\'>📦</div>'"/></div>`
     : '';
