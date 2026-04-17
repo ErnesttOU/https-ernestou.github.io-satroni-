@@ -71,7 +71,7 @@ ingenieria: {
     {
         name: 'OSALO OS-991EX CW',
         img: 'assets/OSALO991EX-CW.webp',
-        boxImg: 'assets/OSALO881cwBOX.webp',
+        boxImg: 'assets/Fx-991CWBOX.webp',
         price: 270000,
         desc: '552 funciones. Spreadsheet, modo tabla, QR. La más completa para ingeniería y ciencias.',
         features: [
@@ -335,8 +335,12 @@ cartBtn.onclick = () => {
     closeDetail();
 };
 
-const waMsg = encodeURIComponent(`Hola! Me interesa la ${p.name} a Gs. ${p.price.toLocaleString()}. ¿Está disponible?`);
-document.getElementById('detail-wa-btn').href = `https://wa.me/5950974687312?text=${waMsg}`;
+const waBtn = document.getElementById('detail-wa-btn');
+waBtn.onclick = function(e) {
+    e.preventDefault();
+    const msg = 'Hola! Me interesa la ' + p.name + ' a Gs. ' + p.price.toLocaleString('es-PY') + '. Esta disponible?';
+    window.open('https://wa.me/595974687312?text=' + encodeURIComponent(msg), '_blank');
+};
 
 closeModal();
 setTimeout(() => {
@@ -412,8 +416,27 @@ items.innerHTML = cart.map(i => `
 `).join('');
 
 const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-document.getElementById('total-amount').textContent = 'Gs. ' + total.toLocaleString();
+document.getElementById('total-amount').textContent = 'Gs. ' + total.toLocaleString('es-PY');
 document.getElementById('cart-total').style.display = 'block';
+
+// Mensaje dinámico según cantidad de productos
+const totalItems = cart.reduce((s, i) => s + i.qty, 0);
+let waCartMsg;
+if (totalItems === 1 && cart.length === 1) {
+    const item = cart[0];
+    waCartMsg = 'Hola! Me interesa comprar la ' + item.name + ' a Gs. ' + item.price.toLocaleString('es-PY') + '. Esta disponible?';
+} else {
+    const lineas = cart.map(i => '- ' + i.qty + 'x ' + i.name + ' (Gs. ' + i.price.toLocaleString('es-PY') + ' c/u)').join('%0A');
+    waCartMsg = 'Hola! Quiero hacer el siguiente pedido:%0A' + lineas + '%0A%0ATotal: Gs. ' + total.toLocaleString('es-PY') + '. Estan disponibles?';
+}
+
+const waCartBtn = document.getElementById('cart-wa-btn');
+if (waCartBtn) {
+    waCartBtn.onclick = function(e) {
+        e.preventDefault();
+        window.open('https://wa.me/595974687312?text=' + encodeURIComponent(waCartMsg.replace(/%0A/g, '\n')), '_blank');
+    };
+}
 }
 
 function changeQty(name, delta) {
