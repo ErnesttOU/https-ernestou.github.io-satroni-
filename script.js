@@ -71,7 +71,7 @@ ingenieria: {
     {
         name: 'OSALO OS-991EX CW',
         img: 'assets/OSALO991EX-CW.webp',
-        boxImg: 'assets/Fx-991CWBOX.webp',
+        boxImg: 'assets/OSALO881cwBOX.webp',
         price: 270000,
         desc: '552 funciones. Spreadsheet, modo tabla, QR. La más completa para ingeniería y ciencias.',
         features: [
