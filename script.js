@@ -71,7 +71,7 @@ ingenieria: {
     {
         name: 'OSALO OS-991EX CW',
         img: 'assets/OSALO991EX-CW.webp',
-        boxImg: 'assets/Fx-991CWBOX.webp',
+        boxImg: 'assets/OSALO881EXcwBOX.webp',
         price: 270000,
         desc: '552 funciones. Spreadsheet, modo tabla, QR. La más completa para ingeniería y ciencias.',
         features: [
@@ -124,7 +124,7 @@ universidad: {
     {
         name: 'Casio fx-991ES PLUS',
         img: 'assets/991ESPLUS.webp',
-        boxImg: '',
+        boxImg: '991ESPLUSBOX.webp',
         price: 195000,
         desc: '417 funciones. Natural Display, modo estadístico y matricial. Muy popular en universidad.',
         features: [
